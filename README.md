@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gym Membership and Slot Register
 
 FitZone Gym · Tilakwadi, Belagavi (fictional demonstration gym) · Foundation Integration Course.
@@ -101,3 +102,6 @@ confirmed bookings with schema intact; it is not an authorization system for hos
 **HUMAN EVIDENCE PENDING:** stakeholder study, mentor decisions, marks, signatures, personal
 ownership demonstration, historical baselines and multi-week commits. AI assistance is disclosed.
 
+=======
+# gym_membership_slot_register
+>>>>>>> 2e361647d9ae2d8d246e0ed87528848fb17f4c25
