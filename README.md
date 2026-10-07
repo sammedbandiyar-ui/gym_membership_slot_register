@@ -1,0 +1,1 @@
+# gym_membership_slot_register
