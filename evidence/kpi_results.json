@@ -1,0 +1,42 @@
+{
+  "measured_at_utc": "2026-10-06T08:38:10.617307+00:00",
+  "dataset": "22 fictional students, 5 slots, 20 confirmed fixture bookings",
+  "reason_completeness": {
+    "correct_blocked_records": 1,
+    "blocked_records": 1,
+    "expected_rule_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R05",
+      "R06",
+      "R09"
+    ],
+    "actual_rule_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R05",
+      "R06",
+      "R09"
+    ]
+  },
+  "decision_latency_ms": {
+    "samples": 100,
+    "mean": 0.03144920005070162,
+    "max": 0.05981999993309728,
+    "target_max": 2000
+  },
+  "enforcement_depth": {
+    "business_rules": 13,
+    "logic_and_database_rules": 13,
+    "verification": "test_all_rules_database_depth; reports success only if entire suite passes"
+  },
+  "rule_change": "test_rule_parameter_change changes daily limit 1 -> 2 with no code edit",
+  "limitations": "Synthetic local checks, not field performance or stakeholder validation.",
+  "suite": {
+    "tests": 43,
+    "failures": 0,
+    "errors": 0
+  }
+}

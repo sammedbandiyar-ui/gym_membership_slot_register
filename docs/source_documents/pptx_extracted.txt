@@ -1,0 +1,942 @@
+
+PART ppt/slides/slide1.xml
+Mini Project Framework
+Foundation Integration Course
+Four Themes   ·   Four Engines   ·   Five Gates   ·   50 Marks
+Department of BCA  ·  KLE Technological University, Belagavi
+Student Orientation
+
+PART ppt/slides/slide2.xml
+What You Are Actually Marked On
+Not how it looks. Whether you can explain the decisions that make it work.
+The data model
+Why is this a separate table? What repeats if you merge them?
+The logic
+Run your rule on paper with three records. Does the code agree?
+The interfaces
+What does Engine 2 send Engine 3, and what if it sends nothing?
+The testing
+Give me an input right now that gives a wrong answer.
+The bugs
+What failed, how did you find the cause, what did you change?
+9/30/2026
+2
+
+PART ppt/slides/slide3.xml
+Course Outcomes
+Every mark you earn is tagged to one of these
+CO
+You will be able to…
+CO1
+Analyse the problem, its scope, the subjects it needs, and the objectives
+CO2
+Write a clear requirements specification with functions, limits and workflows
+CO3
+Design a modular architecture — engines, data model, logic and interfaces
+CO4
+Build an integrated working solution using programming, data and web skills
+CO5
+Test, debug, correct and report the solution with evidence
+On the assessment sheet, every row names the CO it proves.
+9/30/2026
+3
+
+PART ppt/slides/slide4.xml
+Five Subject Areas
+Every theme uses all five through one working system
+#
+Subject
+What must be visible in your project
+1
+Database Management Systems
+Tables, keys, constraints, transactions, queries
+2
+Data Structures & Programming
+One structure or algorithm built by hand, and why it was chosen
+3
+Web Technologies
+Pages, requests, checking on the server, role-based access
+4
+Software Engineering & SDLC
+Requirements, testing, defect log, version control, report
+5
+Object-Oriented Programming
+Modules with clear responsibility, reuse, error handling
+If a subject appears nowhere in your project, your mentor will ask why at Gate 0 — and you can still change the design.
+9/30/2026
+4
+
+PART ppt/slides/slide5.xml
+Four Engines, Four Members
+Each member owns one engine. That is how you are marked as an individual.
+Engine 1
+Data & Integrity
+Database Management Systems
+Tables, keys and constraints. Makes sure bad data cannot get in, even if the form is skipped.
+Member 1
+Engine 2
+Logic & Rule
+Data Structures & Programming
+The main calculation or rule. One structure or algorithm built by hand, with a reason for choosing it.
+Member 2
+Engine 3
+Interface & Access
+Web Technologies
+Screens for each role, requests to the server, and checking again on the server side.
+Member 3
+Engine 4
+Testing & Validation
+Software Engineering & SDLC
+Test table, defect log, root cause notes, version control and the final report.
+Member 4
+Your engine is yours. At every gate you answer for it alone, and those marks cannot be transferred.
+9/30/2026
+5
+
+PART ppt/slides/slide6.xml
+Stages, Sprints and Gates
+A sprint is where you work. A gate is where you are asked to account for it.
+Stage
+What happens
+Sprint
+Gate
+Marks
+Weeks
+S0
+Understand the problem and who has it
+—
+Gate 0
+05
+1 – 2
+S1
+Write the requirements
+—
+Gate 1
+10
+3 – 4
+S2 → S3
+Design the engines, data model and interfaces
+Sprint 1
+Gate 2
+10
+5 – 7
+S4 → S5
+Build the engines and test each one
+Sprint 2
+Gate 3
+15
+8 – 11
+S6 → S7
+Fix, join the engines, validate and close
+Sprint 3
+Gate 4
+10
+12 – 14
+A gate is held, not penalised. If you have not cleared it, you do not lose marks — you do not move on.
+9/30/2026
+6
+
+PART ppt/slides/slide7.xml
+The Mini Project in One Picture
+Five stages · Five gates · 50 marks · 14 weeks
+S0
+Understand the problem
+Weeks 1 – 2
+GATE 0
+5 marks
+↺  HELD
+Who has the problem
+How it works now
+Scope
+Integration Map v1
+S1
+Write the requirements
+Weeks 3 – 4
+GATE 1
+10 marks
+↺  HELD
+FR list with IDs
+Limits
+How we know it works
+User stories
+Sprint 1
+Design engines and data
+Weeks 5 – 7
+GATE 2
+10 marks
+↺  HELD
+Four engines
+ER diagram
+What engines send
+Main logic steps
+Sprint 2
+Build and test each engine
+Weeks 8 – 11
+GATE 3
+15 marks
+↺  HELD
+Four engines working
+Own test results
+Engines talking
+KPI numbers
+Sprint 3
+Fix, join, validate, close
+Weeks 12 – 14
+GATE 4
+10 marks
+↺  HELD
+Bug causes and fixes
+Retests
+Whole system working
+Report and viva
+CLEARED → move to the next stage.        HELD → stay in this stage until the evidence is complete — no marks are lost.
+9/30/2026
+7
+
+PART ppt/slides/slide8.xml
+How Everything Connects
+One theme · four engines · five subjects · five gates
+ONE THEME
+ONE TITLE
+Rule-Checked Records
+Search and Ranking
+Ledger and Money
+Reporting and MIS
+FOUR ENGINES
+FIVE SUBJECTS
+FIVE GATES
+Engine 1 — Data & Integrity
+Member 1
+Database Management Systems
+Engine 2 — Logic & Rule
+Member 2
+Data Structures & Programming
+Engine 3 — Interface & Access
+Member 3
+Web Technologies
+Engine 4 — Testing & Validation
+Member 4
+Software Engineering & SDLC
+Object-Oriented Programming  —  runs through all four engines
+Gate 0
+5 marks
+Gate 1
+10 marks
+Gate 2
+10 marks
+Gate 3
+15 marks
+Gate 4
+10 marks
+Every row on every gate sheet names a course outcome:   CO1 Analyse  ·  CO2 Specify  ·  CO3 Design  ·  CO4 Build  ·  CO5 Test and report
+9/30/2026
+8
+
+PART ppt/slides/slide9.xml
+How You Will Be Questioned
+The same four levels at every gate — published in advance, on purpose
+Basic
+Do you know what you built and why it exists?
+Apply
+Can you show the idea being used in your own work?
+Analyze
+Can you find the weak point yourself?
+Decision
+Can you defend your choice against the alternative?
+If you designed the system, you can answer all four. If you assembled it, you stop at Basic.
+9/30/2026
+9
+
+PART ppt/slides/slide10.xml
+The Four Themes
+Register under one at Gate 0
+1
+Rule-Checked Records Register
+"Where is this rule checked, and what stops someone skipping it?"
+18 titles available  ·  4 teams per theme per division
+2
+Search and Ranking System
+"Why does this result come first — did you decide that, or did the database?"
+18 titles available  ·  4 teams per theme per division
+3
+Ledger and Money Systems
+"Where did this balance come from, and can you prove it?"
+18 titles available  ·  4 teams per theme per division
+4
+Reporting and MIS System
+"What is the denominator of that number, and who did you leave out?"
+18 titles available  ·  4 teams per theme per division
+9/30/2026
+10
+
+PART ppt/slides/slide11.xml
+Theme 1 — Rule-Checked Records Register
+How to write rules down before coding them, keep rule values in a table instead of inside the code, and check a rule in the database and not only in the form.
+Choose one of these titles
+1.  Exam Hall Ticket Issue Register
+2.  Scholarship Eligibility Check Register
+3.  Library Fine Calculation Register
+4.  Hostel Room Priority Allotment Register
+5.  Faculty Leave Balance Register
+6.  Admission Stage-Wise Screening Register
+7.  Sports Event Entry Eligibility Register
+8.  Bus Pass Renewal and Concession Register
+9.  Laboratory Safety Clearance Register
+10.  Internship Approval Register
+11.  Vehicle Parking Permit Register
+12.  Blood Donor Eligibility Register
+13.  Welfare Scheme Beneficiary Register
+14.  Gym Membership and Slot Register
+15.  Driving Test Slot Eligibility Register
+16.  Trade Licence Renewal Register
+17.  Tuition Fee Concession Register
+18.  Club Membership Rule Register
+We will ask:  "Where is this rule checked, and what stops someone skipping it?"
+9/30/2026
+11
+
+PART ppt/slides/slide12.xml
+Worked Example — Exam Hall Ticket Issue Register
+Theme 1
+THE PROBLEM
+Hall tickets are held back at the counter on the morning of the exam, because a due or a shortage is found late. The student cannot fix it in time and loses the paper.
+THE ONE RULE
+A hall ticket is issued only if attendance is 75% or more in every registered subject, and there are no fee dues, no library dues and no disciplinary hold. One failing condition blocks it, and the reason must be shown.
+The four engines
+Engine 1 — Data & Integrity
+DBMS
+Tables for student, subject, attendance, dues and holds. Keys and constraints so a clearance cannot point at a missing student.
+Engine 2 — Logic & Rule
+Data Structures & Programming
+Checks all four conditions and returns issue or block, plus every failing reason. Rule values read from a table, not typed in the code.
+Engine 3 — Interface & Access
+Web Technologies
+Screens for student, clerk and controller. The server checks again, so a direct request cannot skip the rules.
+Engine 4 — Testing & Validation
+Software Engineering
+Test table covering 74.9 / 75.0 / 75.1 attendance, the defect log, root cause notes and the report.
+9/30/2026
+12
+
+PART ppt/slides/slide13.xml
+Architecture — Exam Hall Ticket Issue Register
+Theme 1 · Rule-Checked Records Register
+Student
+Exam Clerk
+Controller
+ENGINE 3 — Interface & Access   (Web Technologies)
+Role-based screens  ·  request handling  ·  the server checks again, so a direct request cannot skip the rules
+student ID
+issue / block + reasons
+ENGINE 2 — Logic & Rule   (Data Structures & Programming)
+Checks all four conditions  ·  collects every failing reason  ·  reads rule values from a table, not from the code
+read records
+rows + refusals
+ENGINE 1 — Data & Integrity   (Database Management Systems)
+Tables:  student  ·  subject  ·  attendance  ·  dues  ·  hold  ·  rule_value  ·  audit
+Foreign keys and CHECK constraints refuse a bad row even when the form is skipped
+ENGINE 4
+Testing & Validation
+(Software Engineering)
+Test table at
+74.9 / 75.0 / 75.1
+Defect log
+Root cause notes
+Version control
+Final report
+9/30/2026
+13
+
+PART ppt/slides/slide14.xml
+Algorithm — Exam Hall Ticket Eligibility Check
+Engine 2 · the four checks all run, and reasons collect
+START
+Read student ID · fetch records
+Attendance ≥ limit
+in every subject ?
+YES
+Fee dues = 0 ?
+YES
+Library dues = 0 ?
+YES
+No disciplinary hold ?
+YES
+Reason list empty ?
+BLOCK — show every reason
+NO
+ISSUE hall ticket
+YES
+Write audit entry · END
+Design point
+All four checks run. The system does NOT stop at the first failure — the student must see every reason.
+Add reason: Attendance short
+Add reason: Fee dues pending
+Add reason: Library dues pending
+Add reason: Disciplinary hold
+REASON
+LIST
+NO
+NO
+NO
+NO
+9/30/2026
+14
+
+PART ppt/slides/slide15.xml
+Exam Hall Ticket Issue Register — End to End
+The same five gates every team passes through
+Stage
+What this team produced
+Gate
+Marks
+S0
+Met the exam section. Last semester 14 hall tickets were held back, 9 for library dues found on the day. Drew how it works now and how it should work.
+Gate 0
+5
+S1
+FR-01 to FR-09 written. FR-04: the system lists every failing condition, not just the first. Limit: the reason must appear on screen, not only in the log.
+Gate 1
+10
+S2–S3
+Four engines marked out. ER diagram with 6 tables; a rule_value table holds the limit and the date it applies from. Engine 2 returns issue plus reasons.
+Gate 2
+10
+S4–S5
+Engines built and tested. Rule check tested at 74.9 / 75.0 / 75.1. Database CHECK and foreign key added; a direct insert of a blocked student was refused.
+Gate 3
+15
+S6–S7
+Root cause: a cleared due still blocked issue, because the date was compared as text. Fixed, retested, whole system checked for all three roles.
+Gate 4
+10
+KPIs measured on this project
+·  Reason shown — 100%
+·  Checked twice — 100%
+·  Change without code — Shown
+9/30/2026
+15
+
+PART ppt/slides/slide16.xml
+Theme 2 — Search and Ranking System
+How to design a search instead of writing one LIKE query, decide yourself which result comes first, and check whether the search actually finds the right thing.
+Choose one of these titles
+1.  Library Catalogue Ranked Search
+2.  Placement Eligibility Search and Ranking
+3.  Second-Hand Book Search and Match
+4.  Elective Preference Ranking Search
+5.  Project Guide Matching Search
+6.  Alumni Directory Lookup System
+7.  Lost and Found Item Matching System
+8.  Hostel Room Vacancy Search
+9.  Scholarship Scheme Finder and Ranking
+10.  Internship Opening Search and Ranking
+11.  Clinic Appointment Slot Search
+12.  Rental Property Search and Ranking
+13.  Second-Hand Vehicle Search and Match
+14.  Recipe Search by Available Ingredients
+15.  Tourist Place Search and Ranking
+16.  Volunteer Skill Matching System
+17.  Online Course Search and Ranking
+18.  Canteen Menu Filtered Search
+We will ask:  "Why does this result come first — did you decide that, or did the database?"
+9/30/2026
+16
+
+PART ppt/slides/slide17.xml
+Worked Example — Library Catalogue Ranked Search
+Theme 2
+THE PROBLEM
+Students search the catalogue by exact title. A small spelling mistake returns nothing, and when many copies match, the order is whatever the database returned — so a reference-only copy often appears above a lendable one.
+THE ONE RULE
+Results are ordered by a score the team designs — title match, availability, edition and copy count — and the same search must be shown in two different orders and compared.
+The four engines
+Engine 1 — Data & Integrity
+DBMS
+Tables for title, author, subject, edition, copy and availability, with keys so a copy cannot point at a missing title.
+Engine 2 — Logic & Rule
+Data Structures & Programming
+Builds a word lookup over title and subject. Calculates the score, sorts the results and breaks ties.
+Engine 3 — Interface & Access
+Web Technologies
+Search box and result list, with designed screens for "nothing found" and "too many found".
+Engine 4 — Testing & Validation
+Software Engineering
+The fixed list of 20 test searches, the results table, the defect log and the report.
+9/30/2026
+17
+
+PART ppt/slides/slide18.xml
+Library Catalogue Ranked Search — End to End
+The same five gates every team passes through
+Stage
+What this team produced
+Gate
+Marks
+S0
+Met the librarian. Of 10 sample searches, 3 returned nothing because of spelling, and copies came back in no particular order.
+Gate 0
+5
+S1
+FR-01 to FR-08 written. FR-05: a search matching nothing shows a suggestion, not a blank page. A fixed list of 20 test searches agreed.
+Gate 1
+10
+S2–S3
+Four engines marked out. Word lookup chosen over scanning every row, with the reason written. Score formula and tie-break rule fixed before coding.
+Gate 2
+10
+S4–S5
+Engines built. The 20 test searches run: the right book was in the top 5 for 17 of them. Same searches shown in two orders and compared.
+Gate 3
+15
+S6–S7
+Root cause: capital-letter searches returned nothing, because words were cleaned when stored but not when searched. Fixed, retested, 18 of 20.
+Gate 4
+10
+KPIs measured on this project
+·  Search accuracy — 80% or more
+·  Order decided by you — Shown
+·  Edge screens designed — Shown
+9/30/2026
+18
+
+PART ppt/slides/slide19.xml
+Theme 3 — Ledger and Money Systems
+That a balance must be calculated from history and never stored and edited, that a correction is a new entry and never a deletion, and that every change must show who made it and when.
+Choose one of these titles
+1.  Lab Equipment Issue and Return Ledger
+2.  Stock Ledger with Live Balance
+3.  Expiry-Aware Consumable Stock Ledger
+4.  Library Book Circulation Ledger
+5.  Sports Equipment Custody Ledger
+6.  IT Asset Allocation Ledger
+7.  Hostel Inventory and Custody Ledger
+8.  Blood Bank Unit Ledger
+9.  Canteen Raw Material Stock Ledger
+10.  Department Expense Ledger with Undo
+11.  Exact-Amount Wallet Ledger  (money)
+12.  Fee Ledger with Bank Matching  (money)
+13.  Instalment Schedule Generator  (money)
+14.  Safe-Retry Payment Ledger  (money)
+15.  Invoice Ledger with Tax Split  (money)
+16.  Hostel Mess Bill Ledger  (money)
+17.  Self-Help Group Contribution Ledger  (money)
+18.  Event Budget and Settlement Ledger  (money)
+We will ask:  "Where did this balance come from, and can you prove it?"
+9/30/2026
+19
+
+PART ppt/slides/slide20.xml
+Worked Example — Lab Equipment Issue and Return Ledger
+Theme 3
+THE PROBLEM
+Components are issued to students against a paper register. At the end of the year nobody can say who holds what, and the physical count never matches the register.
+THE ONE RULE
+Stock can never go below zero. Issue, return and receipt are all entries. The balance is receipts minus issues plus returns, calculated when it is shown — it is never stored as a number.
+The four engines
+Engine 1 — Data & Integrity
+DBMS
+Item, entry, user and audit tables. Foreign keys, a check that stops a negative issue, and entries that succeed or fail together.
+Engine 2 — Logic & Rule
+Data Structures & Programming
+Calculates the balance from history. A queue gives oldest-first use and the list of what each student still holds.
+Engine 3 — Interface & Access
+Web Technologies
+Issue, return and audit screens by role. The server checks again on every entry, so two requests cannot both take the last item.
+Engine 4 — Testing & Validation
+Software Engineering
+Tests for negative stock, double issue and undo. Defect log, root cause notes and the report.
+9/30/2026
+20
+
+PART ppt/slides/slide21.xml
+Architecture — Lab Equipment Issue and Return Ledger
+Theme 3 · Ledger and Money Systems
+Student
+Lab Staff
+Head of Dept
+ENGINE 3 — Interface & Access   (Web Technologies)
+Issue · Return · Audit screens by role  ·  the server re-checks every entry, so two requests cannot both take the last item
+issue request
+balance + refusal
+ENGINE 2 — Logic & Rule   (Data Structures & Programming)
+Balance = receipts − issues + returns, calculated on demand  ·  queue gives oldest-first use and each student’s custody list
+post entry
+entry history
+ENGINE 1 — Data & Integrity   (Database Management Systems)
+Tables:  item  ·  entry (issue / return / receipt)  ·  user  ·  audit
+CHECK stops a negative issue  ·  the two steps succeed or fail together  ·  balance is NEVER stored as a column
+ENGINE 4
+Testing & Validation
+(Software Engineering)
+Negative stock test
+Double issue test
+Undo test
+Defect log
+Root cause notes
+Final report
+9/30/2026
+21
+
+PART ppt/slides/slide22.xml
+Data Flow Diagram (Level 1) — Lab Equipment Issue and Return Ledger
+Theme 3 · external entities, processes and data stores
+Lab Staff
+Student
+Head of Dept
+P1
+Validate
+request
+P2
+Post
+entry
+P3
+Compute
+balance
+P4
+Audit
+report
+D1
+Item master
+D2
+Entry ledger
+D3
+Audit log
+issue request
+return request
+valid
+entry record
+audit record
+history
+current balance
+audit entries
+balances
+audit report
+Note:  there is no "balance" data store. P3 calculates the balance from D2 every time it is asked — that is the whole point of this theme.
+
+PART ppt/slides/slide23.xml
+Lab Equipment Issue and Return Ledger — End to End
+The same five gates every team passes through
+Stage
+What this team produced
+Gate
+Marks
+S0
+Met the lab instructor. Last year 23 components were unaccounted for and no record showed who held them. Drew how it works now and how it should work.
+Gate 0
+5
+S1
+FR-01 to FR-10 written. FR-06: the system refuses an issue that would take stock below zero. Limit: every entry must appear in the audit view.
+Gate 1
+10
+S2–S3
+Four engines marked out. Decision recorded that the balance is calculated, with the query written out. Which steps must succeed together was defined.
+Gate 2
+10
+S4–S5
+Engines built. A half-finished entry was undone, leaving nothing behind. Two tabs issuing the last three units — the second was refused by the database.
+Gate 3
+15
+S6–S7
+Root cause: a return entered before its issue gave a negative count, because entries were ordered by typing time, not event time. Fixed and retested.
+Gate 4
+10
+KPIs measured on this project
+·  Balance calculated, not stored — Shown
+·  Two people at once — Shown
+·  Full audit — 100%
+9/30/2026
+23
+
+PART ppt/slides/slide24.xml
+Theme 4 — Reporting and MIS System
+That a report is a query and not a stored table, that every number must be checkable a second way, and that deciding who is counted is the real work.
+Choose one of these titles
+1.  Attendance Shortage Report System
+2.  Semester Result Analysis Report System
+3.  Course Feedback Summary Report
+4.  Placement Metrics Report System
+5.  Fee Collection and Arrears Ageing Report
+6.  Library Circulation Analysis Report
+7.  Admission Funnel Analysis Report
+8.  Faculty Workload Distribution Report
+9.  Hostel Occupancy and Vacancy Report
+10.  Lab Utilisation Report System
+11.  Sports Participation Analysis Report
+12.  Student Grievance Trend Report
+13.  Transport Route Utilisation Report
+14.  Canteen Sales and Wastage Report
+15.  Utility Consumption Report System
+16.  Alumni Outcome Report System
+17.  Research Publication Metrics Report
+18.  Accreditation Data Consolidation Report
+We will ask:  "What is the denominator of that number, and who did you leave out?"
+9/30/2026
+24
+
+PART ppt/slides/slide25.xml
+Worked Example — Attendance Shortage Report System
+Theme 4
+THE PROBLEM
+Shortage lists come out late, are disputed by students, and are calculated differently by different staff. Three people produce three percentages from the same register.
+THE ONE RULE
+Attendance is classes attended over classes conducted — but cancelled classes, extra classes, students who joined late, and subject-wise versus overall attendance each give a different answer. The team must define the calculation, write down what it leaves out, and defend it.
+The four engines
+Engine 1 — Data & Integrity
+DBMS
+Reads the register, records what arrived — row count, columns, bad rows — and stores the cleaned data with keys and constraints.
+Engine 2 — Logic & Rule
+Data Structures & Programming
+Calculates each report as a query, never a stored table. Recalculates every main number a second way and compares.
+Engine 3 — Interface & Access
+Web Technologies
+Subject-wise and overall views by role, with every number on screen linked to the query behind it.
+Engine 4 — Testing & Validation
+Software Engineering
+Tests with an empty file, a single row and a blank column. Defect log, root cause notes and the report.
+9/30/2026
+25
+
+PART ppt/slides/slide26.xml
+Attendance Shortage Report System — End to End
+The same five gates every team passes through
+Stage
+What this team produced
+Gate
+Marks
+S0
+Met the class coordinator. Three different shortage percentages were in use for the same division, and each was defensible. Drew how it works now and how it should work.
+Gate 0
+5
+S1
+FR-01 to FR-08 written. FR-03: a subject with no classes conducted shows "not applicable", never 0%. Limit: every number must name the query behind it.
+Gate 1
+10
+S2–S3
+Four engines marked out. Wrote down who is counted in each number and who is left out. Designed the query for each report and what one output row means.
+Gate 2
+10
+S4–S5
+Engines built. Tested with cancelled classes, a late joiner and a subject with no classes. Every main number recalculated a second way and shown to match.
+Gate 3
+15
+S6–S7
+Root cause: the division average did not match the average of subject averages, because they add up in different orders. Both defined and labelled.
+Gate 4
+10
+KPIs measured on this project
+·  Checked a second way — 100%
+·  Cleaning recorded — 100%
+·  Who is counted — 100%
+9/30/2026
+26
+
+PART ppt/slides/slide27.xml
+The Gate Assessment Sheet
+You fill your columns before the review. Your mentor fills theirs during it.
+Column
+Who fills it
+When
+What goes in
+What you must bring
+Printed
+—
+The fixed list for that gate, plus your theme rows
+CO
+Printed
+—
+The course outcome that row proves
+You  Y / P / N
+You
+Before the review
+Y = done, P = partly, N = not done
+Where it is
+You
+Before the review
+File name, page, diagram name or test case number
+Mentor  Y / P / N
+Mentor
+During the review
+What was actually SEEN
+Marks
+Mentor
+During the review
+Out of the maximum printed on that row
+Where your column and your mentor’s disagree, that is the most useful line on the page. It is discussed before the gate is decided.
+9/30/2026
+27
+
+PART ppt/slides/slide28.xml
+Sample — Gate 2 Sheet, Theme 1
+Design and Interfaces  ·  10 marks  ·  Sprint 1
+#
+What you must bring
+CO
+You
+Where it is
+Mentor
+Marks
+A1
+Diagram of the four engines and what each one does
+CO3
+/ 2
+A2
+ER diagram with keys, links and constraints
+CO3
+/ 2
+A3
+What each engine sends the others, written down
+CO3
+/ 2
+A4
+Your main logic written as numbered steps
+CO3
+/ 1
+A5
+Integration Map v2 — where each subject shows up, with file names
+CO3
+/ 1
+Only for Theme 1 — Rule-Checked Records Register
+B1
+Rule values kept in a table, not typed inside the code
+CO3
+/ 1
+B2
+For each rule, where it is checked: form, code or database
+CO3
+/ 1
+TOTAL
+/ 10
+Every row names a course outcome. That is how attainment is evidenced, not asserted.
+9/30/2026
+28
+
+PART ppt/slides/slide29.xml
+What You Do in Week One
+1
+Form a team of four
+One member per engine. Decide who owns Engine 1, 2, 3 and 4 now.
+2
+Pick a theme, then a title
+From the lists in the handbook, or propose one of the same shape.
+3
+Find the real user
+Meet the clerk, librarian, lab instructor or coordinator who has this problem.
+4
+Write the one rule
+One sentence. If you cannot finish it, you do not have a project yet.
+5
+Draft the Integration Map
+Which of the five subjects will show up, and where.
+Gate 0 is in Week 2. Bring all five.
+9/30/2026
+29
+
+PART ppt/slides/slide30.xml
+Five Things to Remember
+1
+There are no marks for how it looks.
+Not colours, not animations, not a login page that fades in.
+2
+Documents are dated.
+A rule list written after the code is a description, not a plan.
+3
+You may use AI. You may not submit code you cannot explain.
+That is the whole policy. Keep a short log of what you asked and what you changed.
+4
+Your engine is yours.
+At every gate you answer for it alone. Those marks cannot be transferred.
+5
+Pick a rule, not a project.
+Find something someone currently gets wrong, or does slowly by hand.
+9/30/2026
+30
+
+PART ppt/notesSlides/notesSlide1.xml
+1
+
+PART ppt/notesSlides/notesSlide2.xml
+2
+
+PART ppt/notesSlides/notesSlide3.xml
+3
+
+PART ppt/notesSlides/notesSlide4.xml
+4
+
+PART ppt/notesSlides/notesSlide5.xml
+5
+
+PART ppt/notesSlides/notesSlide6.xml
+6
+
+PART ppt/notesSlides/notesSlide7.xml
+7
+
+PART ppt/notesSlides/notesSlide8.xml
+8
+
+PART ppt/notesSlides/notesSlide9.xml
+9
+
+PART ppt/notesSlides/notesSlide10.xml
+10
+
+PART ppt/notesSlides/notesSlide11.xml
+11
+
+PART ppt/notesSlides/notesSlide12.xml
+12
+
+PART ppt/notesSlides/notesSlide13.xml
+13
+
+PART ppt/notesSlides/notesSlide14.xml
+14
+
+PART ppt/notesSlides/notesSlide15.xml
+15
+
+PART ppt/notesSlides/notesSlide16.xml
+16
+
+PART ppt/notesSlides/notesSlide17.xml
+17
+
+PART ppt/notesSlides/notesSlide18.xml
+18
+
+PART ppt/notesSlides/notesSlide19.xml
+19
+
+PART ppt/notesSlides/notesSlide20.xml
+20
+
+PART ppt/notesSlides/notesSlide21.xml
+21
+
+PART ppt/notesSlides/notesSlide22.xml
+22
+
+PART ppt/notesSlides/notesSlide23.xml
+23
+
+PART ppt/notesSlides/notesSlide24.xml
+24
+
+PART ppt/notesSlides/notesSlide25.xml
+25
+
+PART ppt/notesSlides/notesSlide26.xml
+26
+
+PART ppt/notesSlides/notesSlide27.xml
+27
+
+PART ppt/notesSlides/notesSlide28.xml
+28
+
+PART ppt/notesSlides/notesSlide29.xml
+29
+
+PART ppt/notesSlides/notesSlide30.xml
+30

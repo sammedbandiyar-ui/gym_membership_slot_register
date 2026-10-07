@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content %}
+<section class="card login registration"><span class="eyebrow">FITZONE GYM · BELAGAVI</span><h2>Create your account</h2><p class="muted">Join the register. Once the admin activates your membership, you can book a session.</p>
+<form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+<label>Full name<input name="name" required minlength="2" maxlength="80" autocomplete="name" value="{{ request.form.get('name','') }}"></label>
+<label>Email address<input name="email" type="email" required maxlength="254" autocomplete="email" value="{{ request.form.get('email','') }}"></label>
+<label>Phone number<input name="phone" type="tel" required pattern="[0-9]{10}" maxlength="10" autocomplete="tel" value="{{ request.form.get('phone','') }}"></label>
+<div class="form-grid"><label>Age<input name="age" type="number" required min="1" max="120" step="1" value="{{ request.form.get('age','') }}"></label><label>Gender<select name="gender" required><option value="">Select gender</option>{% for gender in genders %}<option value="{{ gender }}" {% if request.form.get('gender')==gender %}selected{% endif %}>{{ gender }}</option>{% endfor %}</select></label></div>
+<label>Choose a username<input name="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9_]{3,30}" autocomplete="username" value="{{ request.form.get('username','') }}"></label>
+<div class="form-grid"><label>Password<input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label><label>Confirm password<input name="confirm_password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label></div>
+<p class="muted"><small>Use at least 8 characters for your password.</small></p><button class="wide">Create account</button></form>
+<p class="auth-note">Already registered? <a href="{{ url_for('login') }}">Sign in</a></p></section>{% endblock %}

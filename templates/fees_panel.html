@@ -1,0 +1,11 @@
+<dialog id="fees-panel" class="fees-panel" aria-labelledby="fees-title">
+  <div class="panel-heading"><span class="eyebrow">INVEST IN YOUR ROUTINE</span><button type="button" class="secondary" data-close-fees aria-label="Close fees">✕</button></div>
+  <h2 id="fees-title">Membership fees</h2>
+  <p class="muted">Choose the period that fits your goals. All amounts are in Indian rupees.</p>
+  {% for months,label in [(12,'1 year'),(6,'6 months'),(3,'3 months')] %}
+  <section class="fee-card"><span>{{ label }}</span><strong>{{ gym['fee_'+months|string]|money }}</strong><small class="muted">{{ months }} months of membership</small></section>
+  {% endfor %}
+  <p class="muted">Contact the gym to arrange membership. Your membership starts after the admin activates it.</p>
+  {% if gym.phone %}<p><strong>Contact:</strong> {{ gym.phone }}</p>{% endif %}
+  {% if g.user and g.user.role=='admin' %}<a class="button wide" href="{{ url_for('edit_gym') }}">Edit fees & gym details</a>{% endif %}
+</dialog>

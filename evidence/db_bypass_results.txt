@@ -1,0 +1,4 @@
+Blocked student: REFUSED — R01 Student active
+Full slot: REFUSED — R09 Capacity available
+Foreign key: REFUSED — FOREIGN KEY constraint failed
+Invalid capacity: REFUSED — CHECK constraint failed: typeof(capacity)='integer' AND capacity BETWEEN 1 AND 200

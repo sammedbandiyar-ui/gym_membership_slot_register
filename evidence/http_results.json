@@ -1,0 +1,158 @@
+{
+  "executed_at_ist": "2026-10-07T16:00:41.582407+05:30",
+  "method": "Real localhost HTTP requests. Legacy rule fixtures stay isolated until explicit daily-schedule checks. Browser visuals are verified separately.",
+  "checks": [
+    {
+      "check": "Public registration creates account",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "New member can sign in",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "New member cannot book before activation",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Admin activates registered member",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Registered member books after activation",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Member dashboard and profile",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Valid booking at 19/20",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Duplicate plus full slot",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Overlap refused",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Full slot refused",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Own cancellation",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Availability returns to 19/20",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Member cannot access admin",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Blocked booking displays every failing rule",
+      "result": "PASS",
+      "details": "R01, R02, R03, R05, R06, R09"
+    },
+    {
+      "check": "Coordinator members",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Coordinator reviews reasons",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Coordinator full/open slots",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Coordinator cannot mutate admin data",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Admin updates rule data",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Admin creates slot",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Admin edits capacity",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Admin manages profile/hold/membership",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Changed limit=1 blocks second booking",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Changed limit=2 allows same request",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Daily schedule management opens",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Seven recurring sessions with default capacity",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Daily capacity edit persists",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Gym details and fees displayed",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Member dashboard shows membership period",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "check": "Registration demographics stored",
+      "result": "PASS",
+      "details": ""
+    }
+  ],
+  "total": 30,
+  "passed": 30
+}

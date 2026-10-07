@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card settings-form"><span class="eyebrow">GYM SETTINGS</span><h1>Gym details & fees</h1><p class="muted">These details are shown on About the gym and in the membership fees panel.</p>
+<form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+<label>Address<textarea name="address" rows="3" maxlength="300">{{ request.form.get('address',gym.address) }}</textarea></label>
+<label>Contact phone number<input type="tel" name="phone" maxlength="25" value="{{ request.form.get('phone',gym.phone) }}"></label>
+<h2>Membership fees</h2><p class="muted">Enter the total price in whole rupees. Leave blank to show “Not set”.</p>
+{% for field,label in [('fee_12','1 year'),('fee_6','6 months'),('fee_3','3 months')] %}<label>{{ label }} · INR<input name="{{ field }}" type="number" min="0" max="10000000" step="1" value="{{ request.form.get(field,gym[field] if gym[field] is not none else '') }}"></label>{% endfor %}
+<button>Save gym details</button> <a class="button secondary" href="{{ url_for('about') }}">Cancel</a>
+</form></section>
+{% endblock %}

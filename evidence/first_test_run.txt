@@ -1,0 +1,45 @@
+test_adjacent_slots_allowed (__main__.GymTests.test_adjacent_slots_allowed) ... ok
+test_admin_forms (__main__.GymTests.test_admin_forms) ... ok
+test_admin_invalid_input_no_partial_write (__main__.GymTests.test_admin_invalid_input_no_partial_write) ... ok
+test_all_reasons_stored_and_shown (__main__.GymTests.test_all_reasons_stored_and_shown) ... ok
+test_all_rules_database_depth (__main__.GymTests.test_all_rules_database_depth) ... ok
+test_available_slot (__main__.GymTests.test_available_slot) ... ok
+test_cancel_ownership (__main__.GymTests.test_cancel_ownership) ... ok
+test_cancellation_reopens_capacity (__main__.GymTests.test_cancellation_reopens_capacity) ... ok
+test_capacity_19_20_and_20_20 (__main__.GymTests.test_capacity_19_20_and_20_20) ... ok
+test_capacity_reduction_and_time_edit (__main__.GymTests.test_capacity_reduction_and_time_edit) ... ok
+test_concurrent_last_place (__main__.GymTests.test_concurrent_last_place) ... ok
+test_conflict_algorithm_unit (__main__.GymTests.test_conflict_algorithm_unit) ... ok
+test_conflicting_booking (__main__.GymTests.test_conflicting_booking) ... ok
+test_csrf_and_wrong_password (__main__.GymTests.test_csrf_and_wrong_password) ... ok
+test_database_update_bypass (__main__.GymTests.test_database_update_bypass) ... ok
+test_direct_database_bypass (__main__.GymTests.test_direct_database_bypass) ... ok
+test_direct_request_rechecks_rules (__main__.GymTests.test_direct_request_rechecks_rules) ... ok
+test_duplicate (__main__.GymTests.test_duplicate) ... ok
+test_expired_membership (__main__.GymTests.test_expired_membership) ... ok
+test_full_slot (__main__.GymTests.test_full_slot) ... ok
+test_html_escape_and_sql_injection (__main__.GymTests.test_html_escape_and_sql_injection) ... ok
+test_inactive_and_past_slots (__main__.GymTests.test_inactive_and_past_slots) ... ok
+test_inactive_membership (__main__.GymTests.test_inactive_membership) ... ok
+test_inactive_student (__main__.GymTests.test_inactive_student) ... ok
+test_incomplete_profile (__main__.GymTests.test_incomplete_profile) ... ok
+test_invalid_capacity (__main__.GymTests.test_invalid_capacity) ... ok
+test_invalid_dates_times (__main__.GymTests.test_invalid_dates_times) ... ok
+test_invalid_foreign_key (__main__.GymTests.test_invalid_foreign_key) ... ok
+test_membership_exact_boundary (__main__.GymTests.test_membership_exact_boundary) ... ok
+test_membership_not_started (__main__.GymTests.test_membership_not_started) ... ok
+test_membership_slot_date_covered (__main__.GymTests.test_membership_slot_date_covered) ... ok
+test_missing_membership (__main__.GymTests.test_missing_membership) ... ok
+test_missing_slot_rollback (__main__.GymTests.test_missing_slot_rollback) ... ok
+test_policy_period_overlap_and_missing (__main__.GymTests.test_policy_period_overlap_and_missing) ... ok
+test_rejection_shape_constraint (__main__.GymTests.test_rejection_shape_constraint) ... ok
+test_restricted_student (__main__.GymTests.test_restricted_student) ... ok
+test_roles_and_private_history (__main__.GymTests.test_roles_and_private_history) ... ok
+test_rule_parameter_change (__main__.GymTests.test_rule_parameter_change) ... ok
+test_transaction_rollback (__main__.GymTests.test_transaction_rollback) ... ok
+test_valid_booking (__main__.GymTests.test_valid_booking) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 1.143s
+
+OK

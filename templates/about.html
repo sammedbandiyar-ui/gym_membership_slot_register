@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}About the gym · FitZone{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">WELCOME TO FITZONE</p><h1>Your space to get stronger.</h1><p class="muted">Plan your visit, explore memberships, and make time for your next session.</p></div>{% if g.user and g.user.role=='admin' %}<a class="button" href="{{ url_for('edit_gym') }}">Edit gym details</a>{% endif %}</div>
+<div class="about-grid">
+  <section class="card"><span class="eyebrow">FIND & CONTACT US</span><h2>About the gym</h2><dl class="detail-list"><dt>Gym</dt><dd>FitZone Gym</dd><dt>Address</dt><dd class="address">{{ gym.address or 'Not set — contact the gym admin.' }}</dd><dt>Phone number</dt><dd>{{ gym.phone or 'Not set — contact the gym admin.' }}</dd></dl><button type="button" data-open-fees class="button">View membership fees ↗</button><noscript><p>1 year: {{ gym.fee_12|money }} · 6 months: {{ gym.fee_6|money }} · 3 months: {{ gym.fee_3|money }}</p></noscript></section>
+  <section class="card"><span class="eyebrow">OPEN EVERY DAY</span><h2>Gym hours</h2><dl class="detail-list"><dt>Morning</dt><dd>7:00 AM – 1:00 PM</dd><dt>Evening</dt><dd>4:00 PM – 8:30 PM</dd></dl><p class="muted">Standard sessions last 90 minutes, with 20 places per session. Check the dashboard for current availability and any schedule changes.</p></section>
+</div>
+<section class="card"><h2>Daily timetable</h2><p class="muted">All times are in IST. The same timetable repeats every day.</p><div class="timetable-list">{% for slot in timetable %}<div><strong>{{ slot.start_time }} – {{ slot.end_time }}</strong><span>{{ slot.capacity }} places</span></div>{% else %}<p>No daily sessions are active.</p>{% endfor %}</div></section>
+{% endblock %}

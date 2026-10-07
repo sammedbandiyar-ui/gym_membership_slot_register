@@ -1,0 +1,1 @@
+Updated ZIP: CRC and SHA-256 manifest validation performed during packaging. Earlier fresh-extraction check applied to original version. Revised code passed 43 tests and 24 real HTTP checks before packaging.

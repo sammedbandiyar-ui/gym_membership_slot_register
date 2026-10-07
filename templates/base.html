@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}FitZone Gym{% endblock %} | Tilakwadi, Belagavi</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<script src="{{ url_for('static',filename='ui.js') }}" defer></script>
+</head>
+<body class="{{ 'signed-in' if g.user else 'auth-page' }}">
+<a class="skip-link" href="#main-content">Skip to content</a>
+{% macro icon(name) %}<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{% if name=='grid' %}<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>{% elif name=='calendar' %}<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h3m3 0h2"/>{% elif name=='members' %}<circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2m1-16a3 3 0 0 1 0 6m3 10v-2a6 6 0 0 0-2-4"/>{% elif name=='plus' %}<path d="M12 5v14M5 12h14"/>{% else %}<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/>{% endif %}</svg>{% endmacro %}
+<aside class="sidebar">
+  <a class="brand" href="{{ url_for('dashboard') if g.user else url_for('login') }}"><span class="brand-mark" aria-hidden="true">F<span>z</span></span><span>FitZone<span class="brand-caption">TRAIN. GROW. REPEAT.</span></span></a>
+  {% if g.user %}
+  <p class="nav-label">YOUR GYM</p>
+  <nav aria-label="Main navigation">
+    {% for endpoint,label,symbol in [('dashboard','Overview','grid'),('bookings','Booking decisions','calendar')] %}<a href="{{ url_for(endpoint) }}" {% if request.endpoint==endpoint %}class="active" aria-current="page"{% endif %}>{{ icon(symbol) }}{{ label }}</a>{% endfor %}
+    {% if g.user.role!='student' %}<a href="{{ url_for('members') }}" {% if request.endpoint in ['members','edit_member'] %}class="active" aria-current="page"{% endif %}>{{ icon('members') }}Members</a>{% endif %}
+    {% if g.user.role=='admin' %}<a href="{{ url_for('edit_schedule') }}" {% if request.endpoint=='edit_schedule' %}class="active" aria-current="page"{% endif %}>{{ icon('calendar') }}Daily schedule</a><a href="{{ url_for('edit_gym') }}" {% if request.endpoint=='edit_gym' %}class="active" aria-current="page"{% endif %}>{{ icon('settings') }}Gym settings</a><a href="{{ url_for('edit_slot') }}" {% if request.endpoint=='edit_slot' %}class="active" aria-current="page"{% endif %}>{{ icon('plus') }}Create slot</a><a href="{{ url_for('edit_rules') }}" {% if request.endpoint=='edit_rules' %}class="active" aria-current="page"{% endif %}>{{ icon('settings') }}Rule values</a>{% endif %}
+    <a href="{{ url_for('about') }}" {% if request.endpoint=='about' %}class="active" aria-current="page"{% endif %}>{{ icon('members') }}About the gym</a>
+    <button type="button" class="nav-button" data-open-fees>{{ icon('grid') }}Membership fees</button>
+  </nav>
+  <div class="sidebar-note"><span class="eyebrow">A LITTLE EVERY DAY.</span><p>Your next session is a step forward.</p><span class="muted">Tilakwadi, Belagavi</span></div>
+  {% else %}<nav aria-label="Gym information"><a href="{{ url_for('about') }}">{{ icon('members') }}About the gym</a><button type="button" class="nav-button" data-open-fees>{{ icon('grid') }}Membership fees</button></nav>{% endif %}
+</aside>
+<div class="workspace">
+<header class="topbar">
+  <span class="topbar-label">MEMBERSHIP & SLOT REGISTER</span>
+  {% if g.user %}<div class="account"><span class="avatar" aria-hidden="true">{{ g.user.username[0]|upper }}</span><span class="account-name"><strong>{{ g.user.username }}</strong><small>{{ g.user.role|member_text|title }}</small></span><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button class="secondary compact">Log out</button></form></div>
+  {% else %}<div class="auth-links"><a href="{{ url_for('login') }}">Sign in</a><a class="button" href="{{ url_for('register') }}">Join the gym</a></div>{% endif %}
+</header>
+<main id="main-content">
+  {% for category,message in get_flashed_messages(with_categories=true) %}<div class="notice {{ category }}" role="alert">{{ message|member_text }}</div>{% endfor %}
+  {% block content %}{% endblock %}
+</main>
+<footer><span>FitZone Gym <span class="footer-dot">·</span> Tilakwadi, Belagavi</span><span>Demo gym <span class="footer-dot">·</span> All slot times in IST (UTC+05:30)</span></footer>
+</div>
+{% include 'fees_panel.html' %}
+</body>
+</html>

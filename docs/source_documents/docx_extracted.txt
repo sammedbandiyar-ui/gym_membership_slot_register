@@ -1,0 +1,1692 @@
+
+PART word/document.xml
+BCA MINI PROJECT
+Foundation Integration Course
+Four Themes  ·  Project Titles  ·  Worked Examples  ·  Gate Assessment Sheets
+Department of BCA  ·  KLE Technological University, Belagavi
+Mini Project — Foundation Integration Course: the S0 to S7 stage model, the Gate 0 to Gate 4 structure carrying 50 marks, the Basic / Apply / Analyze / Decision question ladder, and the engine-based decomposition. 
+A BCA teams build three engines, and integrates five foundational course areas.
+How to use this handbook. Students read Part A and the theme they register under. Faculty mentors read Part A and Part C. Each team needs five assessment sheets — the five gate sheets for their own theme, printed from Part C. Both the student and the mentor fill the same sheet, in their own columns, independently.
+PART A — The Framework
+Course Outcomes
+Every assessment row in Part C carries the course outcome it evidences. This is what makes attainment measurable rather than asserted.
+CO
+On successful completion, the student will be able to…
+CO1
+Analyse the problem, its scope, the foundational concepts it needs, and the objectives
+CO2
+Formulate a structured requirements specification with FRs, NFRs, constraints and workflows
+CO3
+Design a modular architecture: engines, data model, data structures, algorithms, interfaces
+CO4
+Develop an integrated solution using programming, data management and web principles
+CO5
+Evaluate through failure-mode testing, validation, debugging, refinement and a technical report
+Five Foundational Course Areas
+Every theme integrates all five areas through a single runnable system.
+#
+Course area
+What must be visible in the project
+1
+Programming & Object-Oriented Programming
+Module decomposition, classes and responsibility, error handling, reuse
+2
+Data Structures & Algorithms
+One non-trivial structure built and justified, with a complexity note
+3
+Database Management Systems
+Schema design, normalisation, constraints, transactions, indexing, queries
+4
+Software Engineering & SDLC
+Requirements, architecture, test planning, version control, RCA, documentation
+5
+Web Technologies
+Client-server model, request handling, server-side validation, role-based interface
+Three Engines, One Integrated System
+Each project is decomposed into three engines. Each engine is independently ownable and testable, and each team member owns one — which is what makes individual assessment possible without splitting the project into three unrelated pieces.
+Engine
+Primary course area
+Owned by
+What it must demonstrate
+Engine 1 — Data & Integrity
+Database Management Systems
+Member 1
+Schema with constraints, transactions, indexing, integrity enforced at the database
+Engine 2 — Logic & Rule
+Data Structures + Programming
+Member 2
+One non-trivial structure or algorithm built and justified, with a complexity note
+Engine 3 — Interface & Access
+Web Technologies
+Member 3
+Client-server request handling, server-side validation, role-based access
+Software Engineering & SDLC is not an engine. It runs across all three, and is assessed as process output at every gate — requirements, architecture, test planning, version control, RCA and documentation.
+Stages, Sprints and Gates
+Stage
+What happens
+Sprint
+Gate
+Marks
+Weeks
+S0
+Problem Definition & Need Identification
+—
+Gate 0
+05
+Weeks 1–2
+S1
+Functional Requirements Engineering
+—
+Gate 1
+10
+Weeks 3–4
+S2 → S3
+Architecture, Data Design, Interface & Algorithm Design
+Sprint 1
+Gate 2
+10
+Weeks 5–7
+S4 → S5
+Core Build, Unit & Module Testing, Engine Readiness
+Sprint 2
+Gate 3
+15
+Weeks 8–11
+S6 → S7
+RCA, Integration, Final Validation & Closure
+Sprint 3
+Gate 4
+10
+Weeks 12–14
+Total: 50 marks.
+The gate is held, not penalised. A team that has not cleared a gate does not lose marks — it does not proceed to the next stage until the gate is cleared. Stages may overlap within a sprint, but a gate is a genuine stop.
+The Question Ladder
+Every gate is examined at four levels. The same four, every gate, for every team.
+Level
+What it tests
+Typical form
+Basic
+Does the team know what they built and why it exists?
+What is being solved, and who is affected?
+Apply
+Can they show the concept being used in their own work?
+How is this requirement converted into an acceptance criterion?
+Analyze
+Can they find the weakness, conflict or risk themselves?
+Where can two users collide, or two rules conflict?
+Decision
+Can they justify a choice against an alternative?
+Is this design stable enough to begin implementation?
+PART B — Themes, Titles and Worked Examples
+Theme 1 — Rule-Checked Records Register
+What this theme teaches: How to write rules down before coding them, store rule parameters as data so they can change without editing code, and enforce a rule in the database and not only in the form.
+The question we will ask: "Where is this rule enforced, and what stops someone bypassing it?"
+Project titles
+Register one of these, or a title of the same shape approved at Gate 0. A title that names only an application — "college app", "online portal" — is sent back.
+#
+Title
+#
+Title
+1
+Exam Hall Ticket Issue Register
+2
+Scholarship Eligibility Check Register
+3
+Library Fine Calculation Register
+4
+Hostel Room Priority Allotment Register
+5
+Faculty Leave Balance Register
+6
+Admission Stage-Wise Screening Register
+7
+Sports Event Entry Eligibility Register
+8
+Bus Pass Renewal and Concession Register
+9
+Laboratory Safety Clearance Register
+10
+Internship Approval Register
+11
+Vehicle Parking Permit Register
+12
+Blood Donor Eligibility Register
+13
+Welfare Scheme Beneficiary Register
+14
+Gym Membership and Slot Register
+15
+Driving Test Slot Eligibility Register
+16
+Trade Licence Renewal Register
+17
+Tuition Fee Concession Register
+18
+Club Membership Rule Register
+Worked example — Exam Hall Ticket Issue Register
+The problem: Hall tickets are withheld at the counter on the morning of the examination because a due or a shortage was discovered late. The student cannot fix it in time and loses the paper.
+The one rule: A hall ticket is issued only if attendance is 75% or more in every registered subject, there are no fee dues, no library dues, and no disciplinary hold. A single failing condition blocks issue, and the reason must be shown.
+The three engines
+Engine
+Course area
+What it does
+Engine 1 — Student & Clearance Data Engine
+DBMS
+Tables for student, subject registration, attendance, dues and holds. Constraints so a clearance cannot point at a non-existent student. Transactions when a due is cleared.
+Engine 2 — Eligibility Rule Engine
+Data Structures + Programming
+Evaluates all four conditions, returns issue or block plus every failing reason. Rule parameters read from a table with a validity period, not hard-coded.
+Engine 3 — Issue & Verification Interface
+Web Technologies
+Role-based screens for student, clerk and controller. Server-side re-validation so a direct request cannot bypass the check. Hall ticket generation with a verification code.
+End to end, stage by stage
+Stage
+What this team produced
+Gate
+S0
+Met the examination section. Recorded that 14 hall tickets were withheld last semester, 9 for library dues discovered on the day. AS-IS and TO-BE drawn.
+Gate 0
+S1
+FR-01 to FR-09 written. FR-04: the system lists every failing condition, not the first. NFR: a decision returns in under 2 seconds for 3,000 students.
+Gate 1
+S2–S3
+Three engines bounded. ER diagram with 6 tables; rule_parameter table carries threshold and valid_from. Contract fixed: Rule Engine returns {issue: bool, reasons: []}.
+Gate 2
+S4–S5
+Engines built and unit tested. Rule Engine tested at 74.9 / 75.0 / 75.1 attendance. Database CHECK and FK added; direct insert of a blocked student refused.
+Gate 3
+S6–S7
+RCA: a cleared due still blocked issue — the timestamp was compared as text. Fixed, regression run, end-to-end validated across 3 roles.
+Gate 4
+KPIs for this project
+KPI
+How it is measured
+Target
+Checked at
+Reason completeness
+Blocked records showing every failing rule ÷ blocked records
+100%
+Gate 3
+Enforcement depth
+Rules enforced in logic AND database ÷ total rules
+100%
+Gate 3
+Rule change without code
+Attendance threshold changed by editing data only
+Demonstrated
+Gate 4
+Theme 2 — Search and Ranking System
+What this theme teaches: How to design a search instead of writing a LIKE query, decide the order of results yourself, and measure whether an index actually made the search faster.
+The question we will ask: "Why does this result appear first — did you decide that, or did the database?"
+Project titles
+Register one of these, or a title of the same shape approved at Gate 0. A title that names only an application — "college app", "online portal" — is sent back.
+#
+Title
+#
+Title
+1
+Library Catalogue Ranked Search
+2
+Placement Eligibility Search and Ranking
+3
+Second-Hand Book Search and Match
+4
+Elective Preference Ranking Search
+5
+Project Guide Matching Search
+6
+Alumni Directory Lookup System
+7
+Lost and Found Item Matching System
+8
+Hostel Room Vacancy Search
+9
+Scholarship Scheme Finder and Ranking
+10
+Internship Opening Search and Ranking
+11
+Clinic Appointment Slot Search
+12
+Rental Property Search and Ranking
+13
+Second-Hand Vehicle Search and Match
+14
+Recipe Search by Available Ingredients
+15
+Tourist Place Search and Ranking
+16
+Volunteer Skill Matching System
+17
+Online Course Search and Ranking
+18
+Canteen Menu Filtered Search
+Worked example — Library Catalogue Ranked Search
+The problem: Students search the catalogue by exact title. A near-miss spelling returns nothing, and when many copies match, the order is whatever the database returned, so a reference-only copy often appears above a lendable one.
+The one rule: Results are ordered by a relevance score the team designs — title match weight, availability, edition recency and copy count — and the same query must be shown under two different orderings and compared.
+The three engines
+Engine
+Course area
+What it does
+Engine 1 — Catalogue & Index Engine
+DBMS
+Schema for title, author, subject, edition, copy and availability. Index designed on the searched columns, with query time measured before and after.
+Engine 2 — Retrieval & Ranking Engine
+Data Structures + Programming
+Inverted index or hash map built from scratch over title and subject tokens. Scoring formula, sorting, tie-breaking, complexity note.
+Engine 3 — Search Interface Engine
+Web Technologies
+Asynchronous query, result rendering, and designed behaviour for the empty result and the thousand-result cases.
+End to end, stage by stage
+Stage
+What this team produced
+Gate
+S0
+Met the librarian. Timed the current search: 40 seconds average, and 3 of 10 sample searches returned nothing because of spelling. AS-IS and TO-BE drawn.
+Gate 0
+S1
+FR-01 to FR-08 written. FR-05: a query matching nothing returns a suggestion, not a blank page. NFR: results in under 1 second at 30,000 titles.
+Gate 1
+S2–S3
+Three engines bounded. Inverted index chosen over a LIKE scan, with the complexity argument written. Scoring formula fixed before coding.
+Gate 2
+S4–S5
+Engines built. Query time measured at 300 / 3,000 / 30,000 rows, with and without index, in a six-cell table. Two orderings compared on 20 queries.
+Gate 3
+S6–S7
+RCA: uppercase queries returned nothing — tokens were normalised on insert but not on query. Fixed, regression run, top-10 relevance 78%.
+Gate 4
+KPIs for this project
+KPI
+How it is measured
+Target
+Checked at
+Index effect measured
+Query time recorded at 3 dataset sizes, with and without index
+6 cells filled
+Gate 3
+Ranking comparison
+Two orderings produced for the same query set and compared
+Demonstrated
+Gate 3
+Top-10 relevance
+Relevant results in the top 10 ÷ 10, over a fixed 20-query set
+70% or more
+Gate 4
+Theme 3 — Ledger and Money Systems
+What this theme teaches: That a balance must be calculated from history and never stored and edited, that a correction is a new entry and never a deletion, and that every change must be traceable to who made it and when.
+The question we will ask: "Where did this balance come from, and can you prove it?"
+Project titles
+Register one of these, or a title of the same shape approved at Gate 0. A title that names only an application — "college app", "online portal" — is sent back.
+#
+Title
+#
+Title
+1
+Lab Equipment Issue and Return Ledger
+2
+Stock Ledger with Live Balance
+3
+Expiry-Aware Consumable Stock Ledger
+4
+Library Book Circulation Ledger
+5
+Sports Equipment Custody Ledger
+6
+IT Asset Allocation Ledger
+7
+Hostel Inventory and Custody Ledger
+8
+Blood Bank Unit Ledger
+9
+Canteen Raw Material Stock Ledger
+10
+Department Expense Ledger with Rollback
+11
+Exact-Amount Wallet Ledger  (money)
+12
+Fee Ledger with Bank Matching  (money)
+13
+Instalment Schedule Generator  (money)
+14
+Safe-Retry Payment Ledger  (money)
+15
+Invoice Ledger with Tax Split  (money)
+16
+Hostel Mess Bill Ledger  (money)
+17
+Self-Help Group Contribution Ledger  (money)
+18
+Event Budget and Settlement Ledger  (money)
+Worked example — Lab Equipment Issue and Return Ledger
+The problem: Components are issued to students for project work against a register. At the end of the year nobody can say who holds what, and the physical count never matches the register.
+The one rule: Stock can never fall below zero. Issue, return and receipt are all transactions. The balance is the sum of receipts minus issues plus returns, computed at the moment it is displayed — it is never stored as a number.
+The three engines
+Engine
+Course area
+What it does
+Engine 1 — Transaction & Integrity Engine
+DBMS
+Item master, transaction table, user table and audit table. Foreign keys, a CHECK preventing negative issue, and an explicit transaction so a two-part posting cannot half-complete.
+Engine 2 — Balance & Custody Engine
+Data Structures + Programming
+Derives the balance by aggregation. A queue structure gives oldest-first consumption and the outstanding-custody list per student. Complexity note on the aggregation.
+Engine 3 — Issue Counter & Audit Interface
+Web Technologies
+Issue, return and audit screens with roles. Server-side re-check on every posting, so two simultaneous requests cannot both succeed against the last unit.
+End to end, stage by stage
+Stage
+What this team produced
+Gate
+S0
+Met the lab instructor. Recorded that last year 23 components were unaccounted for and no record showed who held them. AS-IS and TO-BE drawn.
+Gate 0
+S1
+FR-01 to FR-10 written. FR-06: the system refuses an issue that would take stock below zero. NFR: every posting appears in the audit view within one second.
+Gate 1
+S2–S3
+Three engines bounded. Decision recorded that balance is derived, with the aggregation query written out. Transaction boundary defined for issue-plus-audit.
+Gate 2
+S4–S5
+Engines built. Rollback demonstrated on a deliberately failed two-part posting. Two browser tabs issuing the last three units — second refused at the database.
+Gate 3
+S6–S7
+RCA: a return posted before its issue gave a negative custody count — ordering was by insert time, not event time. Fixed and regression run.
+Gate 4
+KPIs for this project
+KPI
+How it is measured
+Target
+Checked at
+Balance derived, not stored
+Deleting one transaction row corrects the displayed balance
+Demonstrated
+Gate 3
+Concurrency safety
+Two simultaneous issues of the last unit — one succeeds, one is refused
+Demonstrated
+Gate 3
+Audit completeness
+Postings carrying user, timestamp and previous balance ÷ total postings
+100%
+Gate 4
+Theme 4 — Reporting and MIS System
+What this theme teaches: That a report is a query and not a stored table, that every number must be traceable and checkable a second way, and that deciding who is counted is the real work.
+The question we will ask: "What is the denominator of that number, and who did you leave out?"
+Project titles
+Register one of these, or a title of the same shape approved at Gate 0. A title that names only an application — "college app", "online portal" — is sent back.
+#
+Title
+#
+Title
+1
+Attendance Shortage Report System
+2
+Semester Result Analysis Report System
+3
+Course Feedback Summary Report
+4
+Placement Metrics Report System
+5
+Fee Collection and Arrears Ageing Report
+6
+Library Circulation Analysis Report
+7
+Admission Funnel Analysis Report
+8
+Faculty Workload Distribution Report
+9
+Hostel Occupancy and Vacancy Report
+10
+Lab Utilisation Report System
+11
+Sports Participation Analysis Report
+12
+Student Grievance Trend Report
+13
+Transport Route Utilisation Report
+14
+Canteen Sales and Wastage Report
+15
+Utility Consumption Report System
+16
+Alumni Outcome Report System
+17
+Research Publication Metrics Report
+18
+Accreditation Data Consolidation Report
+Worked example — Attendance Shortage Report System
+The problem: Shortage lists are produced late, disputed by students, and computed differently by different staff. Three people produce three percentages from the same register.
+The one rule: Attendance percentage is attended classes over conducted classes — but cancelled classes, extra classes, students who joined mid-semester, and subject-wise versus aggregate attendance each give a different and defensible answer. The team must define the calculation, document what it excludes, and defend it.
+The three engines
+Engine
+Course area
+What it does
+Engine 1 — Data Intake & Cleaning Engine
+DBMS
+Reads the attendance register, records what arrived — row count, columns, malformed rows — and applies each cleaning rule with the number of rows it affected.
+Engine 2 — Aggregation & Verification Engine
+Data Structures + Programming
+Computes each report as a documented query, never a stored table. Recomputes every headline number by a second independent method and compares.
+Engine 3 — Report & Notice Interface
+Web Technologies
+Subject-wise and aggregate views by role, with every displayed number linked to the query that produced it, and shortage notices generated per student.
+End to end, stage by stage
+Stage
+What this team produced
+Gate
+S0
+Met the class coordinator. Recorded three different shortage percentages in circulation for the same division, and why each was defensible. AS-IS and TO-BE drawn.
+Gate 0
+S1
+FR-01 to FR-08 written. FR-03: a subject with zero conducted classes shows "not applicable", never 0%. NFR: the full division report generates in under 5 seconds.
+Gate 1
+S2–S3
+Three engines bounded. Definition Register written — who is counted in each number and who is excluded. Aggregation query designed per report, with what one output row means.
+Gate 2
+S4–S5
+Engines built. Tested on a register containing cancelled classes, a mid-semester joiner and an all-empty subject. Every headline number recomputed a second way.
+Gate 3
+S6–S7
+RCA: the division average differed from the mean of subject averages — they aggregate in different orders. Both defined, documented and labelled.
+Gate 4
+KPIs for this project
+KPI
+How it is measured
+Target
+Checked at
+Verification agreement
+Headline numbers recomputed a second way and agreeing ÷ total headline numbers
+100%
+Gate 3
+Cleaning traceability
+Cleaning rules recorded with the row count affected ÷ total cleaning rules
+100%
+Gate 3
+Definition completeness
+Reports carrying a written statement of who is counted ÷ total reports
+100%
+Gate 4
+PART C — Gate Assessment Sheets
+Twenty sheets — five gates for each of the four themes. A team prints the five sheets for its own theme at the start of the semester.
+Both columns are filled independently. The student fills the STUDENT column before the review, stating where the evidence is. The mentor fills the FACULTY column during the review, recording what was actually seen. Where the two disagree, that disagreement is the most useful thing on the page — it is discussed before the gate decision is made.
+Column
+Filled by
+When
+What goes in it
+Student — Done?
+The student who owns that engine
+Before the review
+Y (complete) / P (partly) / N (not done)
+Student — Where it is
+The same student
+Before the review
+The exact pointer: file name, document section, diagram element, or test case ID
+Faculty — Seen?
+The mentor
+During the review
+Y (shown and verified) / P / N. Record what was SEEN, not what was described
+Faculty — Marks
+The mentor
+During the review
+Out of the maximum shown in the last column
+SHEETS FOR THEME 1 — RULE-CHECKED RECORDS REGISTER
+Theme 1 · Rule-Checked Records Register
+Gate 0 — Problem Approval   (5 marks)
+Stage: S0
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Problem statement with stakeholders named (who is affected, and how)
+CO1
+1
+A2
+AS-IS workflow and TO-BE workflow drawn
+CO1
+1
+A3
+Scope and out-of-scope list; feasibility and risk note
+CO1
+1
+A4
+Integration Map v1 — which of the five course areas will appear, and where
+CO1
+1
+THEME-SPECIFIC EVIDENCE  —  Rule-Checked Records Register
+B1
+The governing rule declared in one sentence, and the record that currently gets decided wrongly is named
+CO1
+1
+TOTAL
+5
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 1 · Rule-Checked Records Register
+Gate 1 — Requirements Baseline   (10 marks)
+Stage: S1
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Functional requirements with IDs (FR-01, FR-02 …)
+CO2
+2
+A2
+Non-functional requirements stated and measurable
+CO2
+1
+A3
+Acceptance criterion written for every key FR
+CO2
+2
+A4
+Use cases or user stories for each stakeholder role
+CO2
+1
+A5
+Traceability: every FR traced back to a stakeholder need
+CO2
+1
+THEME-SPECIFIC EVIDENCE  —  Rule-Checked Records Register
+B1
+Every rule listed with an ID, its condition, and the message shown when it fails
+CO2
+1
+B2
+Hard rules (block) separated from soft rules (warn only)
+CO2
+1
+B3
+Acceptance criterion written for the boundary of each numeric rule
+CO2
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 1 · Rule-Checked Records Register
+Gate 2 — Architecture & Interface Design   (10 marks)
+Stage: Sprint 1  ·  S2 → S3
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+System architecture — three engines with boundaries and responsibilities
+CO3
+2
+A2
+Data model / ER diagram with keys, relationships and constraints
+CO3
+2
+A3
+Interface contract between engines — inputs, outputs, error cases
+CO3
+2
+A4
+Algorithm or workflow design with a complexity note
+CO3
+1
+A5
+Integration Map v2 — pointers now name real files and diagram elements
+CO3
+1
+THEME-SPECIFIC EVIDENCE  —  Rule-Checked Records Register
+B1
+Rule parameters designed as data in a table with a validity period, not as constants in code
+CO3
+1
+B2
+For each rule, where it is enforced is stated — form, logic layer, database
+CO3
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 1 · Rule-Checked Records Register
+Gate 3 — Implementation & Engine Readiness   (15 marks)
+Stage: Sprint 2  ·  S4 → S5
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Engine 1 (Data & Integrity) built, with unit test results
+CO4
+2
+A2
+Engine 2 (Logic & Rule) built, with unit test results
+CO4
+2
+A3
+Engine 3 (Interface & Access) built, with unit test results
+CO4
+2
+A4
+Interface / contract test between engines passed
+CO4
+2
+A5
+Version control evidence — commits from all members across several weeks
+CO4
+1
+A6
+KPI measurement taken and recorded
+CO5
+2
+THEME-SPECIFIC EVIDENCE  —  Rule-Checked Records Register
+B1
+One rule demonstrated being refused by the database when the form is bypassed
+CO4
+2
+B2
+A blocked record returns every failing rule by name, not just the first
+CO4
+2
+TOTAL
+15
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 1 · Rule-Checked Records Register
+Gate 4 — RCA, Integration, Final Validation & Release   (10 marks)
+Stage: Sprint 3  ·  S6 → S7
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+RCA report for every major defect — symptom, investigation, root cause, fix
+CO5
+2
+A2
+Regression test results after fixes
+CO5
+1
+A3
+Integrated end-to-end workflow validated across all three engines
+CO5
+2
+A4
+Final KPI results compared against the targets set at Gate 1
+CO5
+1
+A5
+Technical report and final Integration Map; individual ownership demonstrated
+CO5
+3
+THEME-SPECIFIC EVIDENCE  —  Rule-Checked Records Register
+B1
+Rule-change test — one parameter value edited in data, and the system behaves differently with no code change
+CO5
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+SHEETS FOR THEME 2 — SEARCH AND RANKING SYSTEM
+Theme 2 · Search and Ranking System
+Gate 0 — Problem Approval   (5 marks)
+Stage: S0
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Problem statement with stakeholders named (who is affected, and how)
+CO1
+1
+A2
+AS-IS workflow and TO-BE workflow drawn
+CO1
+1
+A3
+Scope and out-of-scope list; feasibility and risk note
+CO1
+1
+A4
+Integration Map v1 — which of the five course areas will appear, and where
+CO1
+1
+THEME-SPECIFIC EVIDENCE  —  Search and Ranking System
+B1
+The search currently done by hand is named, with how long it takes and how often it fails
+CO1
+1
+TOTAL
+5
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 2 · Search and Ranking System
+Gate 1 — Requirements Baseline   (10 marks)
+Stage: S1
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Functional requirements with IDs (FR-01, FR-02 …)
+CO2
+2
+A2
+Non-functional requirements stated and measurable
+CO2
+1
+A3
+Acceptance criterion written for every key FR
+CO2
+2
+A4
+Use cases or user stories for each stakeholder role
+CO2
+1
+A5
+Traceability: every FR traced back to a stakeholder need
+CO2
+1
+THEME-SPECIFIC EVIDENCE  —  Search and Ranking System
+B1
+Search fields and filter combinations listed with IDs
+CO2
+1
+B2
+The ordering rule stated as a formula or numbered rule, before any code
+CO2
+1
+B3
+Acceptance criteria written for the empty result and the very large result
+CO2
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 2 · Search and Ranking System
+Gate 2 — Architecture & Interface Design   (10 marks)
+Stage: Sprint 1  ·  S2 → S3
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+System architecture — three engines with boundaries and responsibilities
+CO3
+2
+A2
+Data model / ER diagram with keys, relationships and constraints
+CO3
+2
+A3
+Interface contract between engines — inputs, outputs, error cases
+CO3
+2
+A4
+Algorithm or workflow design with a complexity note
+CO3
+1
+A5
+Integration Map v2 — pointers now name real files and diagram elements
+CO3
+1
+THEME-SPECIFIC EVIDENCE  —  Search and Ranking System
+B1
+Index design — which column, which type, and the reason
+CO3
+1
+B2
+Ranking algorithm designed with a complexity note and a tie-breaking rule
+CO3
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 2 · Search and Ranking System
+Gate 3 — Implementation & Engine Readiness   (15 marks)
+Stage: Sprint 2  ·  S4 → S5
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Engine 1 (Data & Integrity) built, with unit test results
+CO4
+2
+A2
+Engine 2 (Logic & Rule) built, with unit test results
+CO4
+2
+A3
+Engine 3 (Interface & Access) built, with unit test results
+CO4
+2
+A4
+Interface / contract test between engines passed
+CO4
+2
+A5
+Version control evidence — commits from all members across several weeks
+CO4
+1
+A6
+KPI measurement taken and recorded
+CO5
+2
+THEME-SPECIFIC EVIDENCE  —  Search and Ranking System
+B1
+Query time measured at three dataset sizes, with and without an index, shown as a table
+CO4
+2
+B2
+Two different orderings produced for the same query set and compared
+CO4
+2
+TOTAL
+15
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 2 · Search and Ranking System
+Gate 4 — RCA, Integration, Final Validation & Release   (10 marks)
+Stage: Sprint 3  ·  S6 → S7
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+RCA report for every major defect — symptom, investigation, root cause, fix
+CO5
+2
+A2
+Regression test results after fixes
+CO5
+1
+A3
+Integrated end-to-end workflow validated across all three engines
+CO5
+2
+A4
+Final KPI results compared against the targets set at Gate 1
+CO5
+1
+A5
+Technical report and final Integration Map; individual ownership demonstrated
+CO5
+3
+THEME-SPECIFIC EVIDENCE  —  Search and Ranking System
+B1
+Result quality measured on a fixed query set — relevant results in the top ten
+CO5
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+SHEETS FOR THEME 3 — LEDGER AND MONEY SYSTEMS
+Theme 3 · Ledger and Money Systems
+Gate 0 — Problem Approval   (5 marks)
+Stage: S0
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Problem statement with stakeholders named (who is affected, and how)
+CO1
+1
+A2
+AS-IS workflow and TO-BE workflow drawn
+CO1
+1
+A3
+Scope and out-of-scope list; feasibility and risk note
+CO1
+1
+A4
+Integration Map v1 — which of the five course areas will appear, and where
+CO1
+1
+THEME-SPECIFIC EVIDENCE  —  Ledger and Money Systems
+B1
+What currently cannot be proved is named — a disputed balance, a mismatch, or an item nobody can trace
+CO1
+1
+TOTAL
+5
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 3 · Ledger and Money Systems
+Gate 1 — Requirements Baseline   (10 marks)
+Stage: S1
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Functional requirements with IDs (FR-01, FR-02 …)
+CO2
+2
+A2
+Non-functional requirements stated and measurable
+CO2
+1
+A3
+Acceptance criterion written for every key FR
+CO2
+2
+A4
+Use cases or user stories for each stakeholder role
+CO2
+1
+A5
+Traceability: every FR traced back to a stakeholder need
+CO2
+1
+THEME-SPECIFIC EVIDENCE  —  Ledger and Money Systems
+B1
+Every transaction type listed with its effect on the balance
+CO2
+1
+B2
+The rules that must never be violated stated — negative balance, duplicate posting, orphan transaction
+CO2
+1
+B3
+Acceptance criterion written for the audit trail — what every posting must record
+CO2
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 3 · Ledger and Money Systems
+Gate 2 — Architecture & Interface Design   (10 marks)
+Stage: Sprint 1  ·  S2 → S3
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+System architecture — three engines with boundaries and responsibilities
+CO3
+2
+A2
+Data model / ER diagram with keys, relationships and constraints
+CO3
+2
+A3
+Interface contract between engines — inputs, outputs, error cases
+CO3
+2
+A4
+Algorithm or workflow design with a complexity note
+CO3
+1
+A5
+Integration Map v2 — pointers now name real files and diagram elements
+CO3
+1
+THEME-SPECIFIC EVIDENCE  —  Ledger and Money Systems
+B1
+Balance designed as derived, with the aggregation query written out before coding
+CO3
+1
+B2
+Transaction boundary defined — what must succeed or fail together, and why
+CO3
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 3 · Ledger and Money Systems
+Gate 3 — Implementation & Engine Readiness   (15 marks)
+Stage: Sprint 2  ·  S4 → S5
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Engine 1 (Data & Integrity) built, with unit test results
+CO4
+2
+A2
+Engine 2 (Logic & Rule) built, with unit test results
+CO4
+2
+A3
+Engine 3 (Interface & Access) built, with unit test results
+CO4
+2
+A4
+Interface / contract test between engines passed
+CO4
+2
+A5
+Version control evidence — commits from all members across several weeks
+CO4
+1
+A6
+KPI measurement taken and recorded
+CO5
+2
+THEME-SPECIFIC EVIDENCE  —  Ledger and Money Systems
+B1
+Rollback demonstrated — a deliberately failed two-part posting leaves no partial data
+CO4
+2
+B2
+Concurrency test — two simultaneous postings against the last available unit
+CO4
+2
+TOTAL
+15
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 3 · Ledger and Money Systems
+Gate 4 — RCA, Integration, Final Validation & Release   (10 marks)
+Stage: Sprint 3  ·  S6 → S7
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+RCA report for every major defect — symptom, investigation, root cause, fix
+CO5
+2
+A2
+Regression test results after fixes
+CO5
+1
+A3
+Integrated end-to-end workflow validated across all three engines
+CO5
+2
+A4
+Final KPI results compared against the targets set at Gate 1
+CO5
+1
+A5
+Technical report and final Integration Map; individual ownership demonstrated
+CO5
+3
+THEME-SPECIFIC EVIDENCE  —  Ledger and Money Systems
+B1
+Audit or reconciliation report produced, with every row accounted for and none left unclassified
+CO5
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+SHEETS FOR THEME 4 — REPORTING AND MIS SYSTEM
+Theme 4 · Reporting and MIS System
+Gate 0 — Problem Approval   (5 marks)
+Stage: S0
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Problem statement with stakeholders named (who is affected, and how)
+CO1
+1
+A2
+AS-IS workflow and TO-BE workflow drawn
+CO1
+1
+A3
+Scope and out-of-scope list; feasibility and risk note
+CO1
+1
+A4
+Integration Map v1 — which of the five course areas will appear, and where
+CO1
+1
+THEME-SPECIFIC EVIDENCE  —  Reporting and MIS System
+B1
+The number currently computed differently by different people is named, with the differing values
+CO1
+1
+TOTAL
+5
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 4 · Reporting and MIS System
+Gate 1 — Requirements Baseline   (10 marks)
+Stage: S1
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Functional requirements with IDs (FR-01, FR-02 …)
+CO2
+2
+A2
+Non-functional requirements stated and measurable
+CO2
+1
+A3
+Acceptance criterion written for every key FR
+CO2
+2
+A4
+Use cases or user stories for each stakeholder role
+CO2
+1
+A5
+Traceability: every FR traced back to a stakeholder need
+CO2
+1
+THEME-SPECIFIC EVIDENCE  —  Reporting and MIS System
+B1
+Every report defined with its population — who is counted and who is excluded
+CO2
+1
+B2
+Data dictionary for every source field, including the treatment of missing values
+CO2
+1
+B3
+Acceptance criterion: each headline number must be verifiable by a second method
+CO2
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 4 · Reporting and MIS System
+Gate 2 — Architecture & Interface Design   (10 marks)
+Stage: Sprint 1  ·  S2 → S3
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+System architecture — three engines with boundaries and responsibilities
+CO3
+2
+A2
+Data model / ER diagram with keys, relationships and constraints
+CO3
+2
+A3
+Interface contract between engines — inputs, outputs, error cases
+CO3
+2
+A4
+Algorithm or workflow design with a complexity note
+CO3
+1
+A5
+Integration Map v2 — pointers now name real files and diagram elements
+CO3
+1
+THEME-SPECIFIC EVIDENCE  —  Reporting and MIS System
+B1
+Aggregation query designed for each report, with a sentence saying what one output row means
+CO3
+1
+B2
+Cleaning rules designed in advance, each with the expected number of rows affected
+CO3
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 4 · Reporting and MIS System
+Gate 3 — Implementation & Engine Readiness   (15 marks)
+Stage: Sprint 2  ·  S4 → S5
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+Engine 1 (Data & Integrity) built, with unit test results
+CO4
+2
+A2
+Engine 2 (Logic & Rule) built, with unit test results
+CO4
+2
+A3
+Engine 3 (Interface & Access) built, with unit test results
+CO4
+2
+A4
+Interface / contract test between engines passed
+CO4
+2
+A5
+Version control evidence — commits from all members across several weeks
+CO4
+1
+A6
+KPI measurement taken and recorded
+CO5
+2
+THEME-SPECIFIC EVIDENCE  —  Reporting and MIS System
+B1
+Every headline number recomputed by an independent second method and shown to agree
+CO4
+2
+B2
+Edge datasets tested — empty set, single row, an all-empty column, duplicate records
+CO4
+2
+TOTAL
+15
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Theme 4 · Reporting and MIS System
+Gate 4 — RCA, Integration, Final Validation & Release   (10 marks)
+Stage: Sprint 3  ·  S6 → S7
+Division
+Team No.
+Date
+Project title
+Member 1 (Engine 1)
+Member 2 (Engine 2)
+Member 3 (Engine 3)
+Faculty mentor
+#
+Evidence to be produced
+CO
+Student
+Y / P / N
+Student — where the evidence is
+Faculty
+Y / P / N
+Marks
+Max
+A1
+RCA report for every major defect — symptom, investigation, root cause, fix
+CO5
+2
+A2
+Regression test results after fixes
+CO5
+1
+A3
+Integrated end-to-end workflow validated across all three engines
+CO5
+2
+A4
+Final KPI results compared against the targets set at Gate 1
+CO5
+1
+A5
+Technical report and final Integration Map; individual ownership demonstrated
+CO5
+3
+THEME-SPECIFIC EVIDENCE  —  Reporting and MIS System
+B1
+Final traceability — every number displayed on screen points to a documented query
+CO5
+1
+TOTAL
+10
+Student’s own statement — the one thing we know is weakest in this gate
+Faculty question asked at Decision level, and the answer given
+One sentence the team must act on before the next gate
+GATE DECISION
+CLEARED   /   HELD        Student sign: __________   Mentor sign: __________
+Quick Reference
+Gate
+Stage
+Weeks
+Marks
+The question that decides the gate
+Gate 0
+S0 — Problem Definition
+1–2
+05
+What problem is being solved, who is affected, and what evidence proves it exists?
+Gate 1
+S1 — Requirements
+3–4
+10
+How is each requirement converted into an acceptance criterion?
+Gate 2
+Sprint 1 — Architecture
+5–7
+10
+Are the architecture and interface contracts stable enough to begin implementation?
+Gate 3
+Sprint 2 — Build & Test
+8–11
+15
+Is each engine correct, tested and stable enough for integration?
+Gate 4
+Sprint 3 — RCA & Release
+12–14
+10
+Is the system integrated, validated and ready for closure?
+50
+The framework in one sentence. A BCA team builds a smaller system than an engineering team, integrates five foundational course areas instead of six, and is held to exactly the same standard of explaining it.

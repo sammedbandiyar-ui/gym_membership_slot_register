@@ -1,0 +1,122 @@
+GYM MEMBERSHIP AND SLOT REGISTER — START HERE
+FitZone Gym · Tilakwadi, Belagavi (fictional demonstration gym)
+Foundation Integration Course | Theme 1 | Four members / four engines
+
+SOFTWARE
+Python 3.12 recommended (tested); Python 3.10+ with SQLite 3.38+ and JSON support.
+A browser and terminal. Internet is only needed once to install Flask.
+No Node, React, external API, cloud service or JavaScript dependency.
+
+1. EXTRACT THE ZIP and open a terminal inside gym_membership_slot_register.
+
+2. WINDOWS COMMAND PROMPT (cmd.exe)
+   py -3 -m venv .venv
+   .venv\Scripts\activate.bat
+   python -m pip install -r requirements.txt
+   python app.py --init-db
+   python tests.py
+   python app.py
+
+   WINDOWS POWERSHELL (activation not required)
+   py -3 -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   .\.venv\Scripts\python.exe app.py --init-db
+   .\.venv\Scripts\python.exe tests.py
+   .\.venv\Scripts\python.exe app.py
+
+   macOS / LINUX
+   python3 -m venv .venv
+   source .venv/bin/activate
+   python -m pip install -r requirements.txt
+   python app.py --init-db
+   python tests.py
+   python app.py
+
+3. OPEN http://127.0.0.1:5000
+   Stop the server with Ctrl+C. Restart with: python app.py
+   Do NOT initialize again on every start. Initialization refuses to overwrite data.
+   If port 5000 is busy: python app.py --port 5001
+   Then open http://127.0.0.1:5001
+
+DEMO LOGINS — all fictional, all passwords: DemoGym123!
+Student, eligible:   aarav
+Student, expired:    expired
+Student, multiple failures: blocked
+Coordinator:        coordinator
+Admin:              admin
+Extra fixture accounts fixture01 through fixture19 use the same demo password.
+Never use these shared passwords for real student data.
+
+DATABASE
+Initialization creates gym.db and relative dates: all demo slots are tomorrow (IST).
+Slot 1: 06:00-07:00, 19/20 booked.
+Slot 2: 07:00-08:00, 0/20 booked.
+Slot 3: 06:30-07:30, 0/20 booked (overlaps 1 and 2).
+Slot 4: 16:00-17:00, 1/1 FULL.
+Slot 5: 17:00-18:00, 0/20 booked.
+Default max_daily_bookings=2. The first three student profiles have IDs 1,2,3.
+The ZIP also includes evidence/demo_snapshot.db: dated reference only, not loaded
+by the app. Always initialize fresh before the first demonstration.
+If tomorrow's slots have passed, stop the server, back up your own gym.db under
+a different filename, remove gym.db yourself, then run python app.py --init-db.
+This removes all old bookings only if YOU explicitly remove the old database.
+
+EXACT FACULTY DEMONSTRATION SEQUENCE (fresh initialization)
+1. Explain the governing rule and open docs/GATE_0.md through GATE_4.md in order.
+   Flag docs/SOURCE_RECONCILIATION.md: current PPT uses 4 engines; Word uses 3.
+   Gate clearance, signatures, interviews and multi-week commits are pending.
+2. Log in as aarav. Show profile and membership dates. Book slot #1 at 19/20.
+   Confirm success and 20/20 on the dashboard. Book #1 again: R09 and R10.
+3. Book #3: overlapping booking is refused (R11). Book #4: full (R09).
+4. Open Booking decisions; cancel confirmed #1. Dashboard returns to 19/20.
+5. Log out. Log in as blocked; book #4. Show all SIX named failures:
+   R01 active, R02 profile, R03 membership active, R05 expiry, R06 hold, R09 full.
+   Show these same reasons preserved in Booking decisions. Log out.
+6. Log in as expired; book #2. Show R05 membership validity refusal. Log out.
+7. Log in as coordinator. Show members, full/open slots and all decisions.
+   Enter /admin/rules in the URL: 403 refusal. Log out.
+8. Log in as admin. Create a tomorrow slot 18:00-19:00, capacity 3, active Yes.
+   Edit it to capacity 4. Try capacity 0: invalid input is refused.
+   Open Members > Chirag Demo > Edit. Set active Yes, hold No, phone 9999900001,
+   membership active Yes, start today, end tomorrow. Save. Log out.
+9. Log in as blocked. Book #2: now confirmed. Log out.
+10. Log in as admin. Rule values: set policy #1 to max_daily_bookings=1;
+    retain dates. Log out. Log in as aarav, book #2 then #5: #5 blocked R13.
+11. Log out. Admin: change max_daily_bookings to 2, same dates. Log out.
+    aarav: book #5 again. It now succeeds WITHOUT any source-code change.
+12. In a second terminal with the same virtual environment, run:
+    python evidence/db_bypass_demo.py
+    Show the raw database refusal messages (Flask and RuleEngine bypassed).
+13. Run python tests.py. Explain the 13-rule database-depth test, overlap scan,
+    rollback test, concurrency test, all-reasons test and class responsibilities.
+14. Run python evidence/verify_http.py to repeat real HTTP checks automatically.
+    It starts/stops a separate server and uses a temporary database.
+15. Show evidence/kpi_results.json, docs/DEFECT_LOG.md, final Integration Map,
+    four study guides and VIVA_ALL_ENGINES.md. Each member explains their engine.
+
+READING ORDER
+README.md -> docs/SOURCE_RECONCILIATION.md -> docs/GATE_0.md -> GATE_1.md ->
+GATE_2.md -> GATE_3.md -> GATE_4.md -> docs/COLLEGE_REPORT.md -> viva guides.
+
+TEST EVIDENCE
+43 automated tests and 24 live HTTP checks passed during this build.
+Raw logs and JSON contain actual observed data. Re-running overwrites the latest
+results; retain dated copies for your team's real development history.
+The app was started and checked using real HTTP; no manual browser usability
+review, stakeholder validation, real-world KPI, or college approval is claimed.
+
+HUMAN EVIDENCE PENDING
+Member names / USNs, stakeholder interviews, dated initial baselines, mentor
+confirmation of conflicts and algorithm sufficiency, individual viva, signatures,
+faculty marks, actual Gate 0-4 clearance, and genuine multi-week Git history.
+
+REGISTRATION UPDATE
+Website branding: FitZone Gym, Tilakwadi, Belagavi (fictional demo).
+Open http://127.0.0.1:5000/register or click Create an account on Sign in.
+Enter name, phone, username and matching passwords (8+ characters).
+Sign in with the new account. Membership starts as pending, so bookings are blocked.
+Admin: sign in > Members > new member > Edit > set valid membership dates and
+Membership active=Yes > Save. The new member can now book eligible slots.
+Existing gym.db is compatible. To upgrade, stop the app and replace source files,
+keeping your own gym.db. No reset or database migration is needed.
+

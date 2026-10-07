@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">REPEATS EVERY DAY</p><h1>Daily schedule</h1><p class="muted">Changes apply to future sessions. Booked sessions keep their times; individual day overrides are preserved.</p></div><a class="button secondary" href="{{ url_for('edit_slot') }}">Add a single-day slot</a></div>
+<div class="schedule-editor">
+<section class="card"><h2>Regular sessions</h2><p class="muted">7 AM–1 PM · 4 PM–8:30 PM · IST</p><div class="table-wrap"><table><thead><tr><th>Time</th><th>Capacity</th><th>Status</th><th>Action</th></tr></thead><tbody>{% for slot in timetable %}<tr><td>{{ slot.start_time }}–{{ slot.end_time }}</td><td>{{ slot.capacity }}</td><td>{{ 'Active' if slot.active else 'Inactive' }}</td><td><a href="{{ url_for('edit_schedule',sid=slot.id) }}">Edit<span class="sr-only"> {{ slot.start_time }} daily slot</span></a></td></tr>{% endfor %}</tbody></table></div></section>
+<section class="card"><h2>{{ 'Edit daily slot' if row else 'Add a daily slot' }}</h2><p class="muted">Default capacity is 20. Disable a session to stop offering it on future days.</p><form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+<div class="form-grid">{% for field,label in [('start_time','Start time'),('end_time','End time')] %}<label>{{ label }}<input type="time" required name="{{ field }}" value="{{ request.form.get(field,row[field] if row else '') }}"></label>{% endfor %}</div>
+<label>Member capacity<input type="number" name="capacity" required min="1" max="200" value="{{ request.form.get('capacity',row.capacity if row else 20) }}"></label>
+<label>Status<select name="active">{% for value,label in [(1,'Active'),(0,'Inactive')] %}<option value="{{ value }}" {% if request.form.get('active',row.active if row else 1)|int==value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+<button>{{ 'Save daily slot' if row else 'Add daily slot' }}</button>{% if row %} <a class="button secondary" href="{{ url_for('edit_schedule') }}">Cancel</a>{% endif %}
+</form></section></div>
+{% endblock %}
